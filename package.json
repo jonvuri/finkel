@@ -1,6 +1,6 @@
 {
     "name": "finkel",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "author": "Jonathan Rajavuori <jrajav@gmail.com>",
     "description": "Flexible currying mixin for Underscore or Lo-Dash",
     "repository": {
