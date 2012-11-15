@@ -12,10 +12,6 @@ var second = function (a, b, c) {
     return b;
 }
 
-var third = function (a, b, c) {
-    return c;
-}
-
 var secondNonformal = function (a) {
     return arguments[1];
 }
@@ -26,6 +22,14 @@ var sum = function (a, b) {
 
 var sumThree = function (a, b, c) {
     return a + b + c;
+}
+
+var sumThreeNonformal = function () {
+    return arguments[0] + arguments[1] + arguments[2];
+}
+
+var sumFour = function (a, b, c, d) {
+    return a + b + c + d;
 }
 
 module.exports = function (_) {
@@ -55,16 +59,22 @@ module.exports = function (_) {
                 expect(fn('green')).to.equal('green cardamom');
             },
             
-            'should apply all missing formal arguments to "splats"': function () {
-                var fn = _.curry(sumThree, [_], ' pepper');
+            'should apply remaining arguments to "splats" once holes are filled': function () {
+                var fn = _.curry(sumThree, [_], _);
                 
-                expect(fn('Indian', ' long')).to.equal('Indian long pepper');
+                expect(fn('Indian', ' long', ' pepper')).to.equal('Indian long pepper');
+            },
+            
+            'should fill splats with all remaining arguments, regardless of arity': function () {
+                var fn = _.curry(sumThreeNonformal, 'California', [_], _);
+                
+                expect(fn(' bay', ' leaf')).to.equal('California bay leaf');
             },
             
             'should ignore splats after the first': function () {
-                var fn = _.curry(sumThree, [_], ' bay', [_], ' leaf');
+                var fn = _.curry(sumFour, [_], 'ti', [_], 'da');
                 
-                expect(fn('California')).to.equal('California bay leaf');
+                expect(fn('asa', 'foe')).to.equal('asafoetida');
             },
             
             'should fix nonformal arguments': function () {
