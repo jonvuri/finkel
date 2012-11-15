@@ -1,0 +1,24 @@
+{
+    "name": "finkel",
+    "version": "0.1.0",
+    "author": "Jonathan Rajavuori <jrajav@gmail.com>",
+    "description": "Flexible currying/partial application mixin for Underscore.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jrajav/finkel"
+    },
+    "keywords": [
+        "partial",
+        "curry",
+        "underscore",
+        "lodash"
+    ],
+    "main": "./curry",
+    "scripts": {
+        "test": "mocha --ui exports || node_modules/mocha/bin/mocha --ui exports"
+    },
+    "devDependencies": {
+        "mocha": "~1.7"
+    },
+    "license": "MIT"
+}
