@@ -1,5 +1,5 @@
 var _ = require('underscore');
-require('../')(_);
+require('../curry')(_);
 
 module.exports = require('./suite')(_);
 
