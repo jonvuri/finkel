@@ -2,13 +2,14 @@
     "name": "finkel",
     "version": "0.1.0",
     "author": "Jonathan Rajavuori <jrajav@gmail.com>",
-    "description": "Flexible currying/partial application mixin for Underscore.js",
+    "description": "Flexible currying mixin for Underscore or Lo-Dash",
     "repository": {
         "type": "git",
         "url": "https://github.com/jrajav/finkel"
     },
     "keywords": [
         "partial",
+        "application",
         "curry",
         "apply",
         "bind",
