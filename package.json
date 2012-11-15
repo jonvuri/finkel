@@ -1,6 +1,6 @@
 {
     "name": "finkel",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "author": "Jonathan Rajavuori <jrajav@gmail.com>",
     "description": "Flexible currying mixin for Underscore or Lo-Dash",
     "repository": {
@@ -18,7 +18,7 @@
         "underscore",
         "lodash"
     ],
-    "main": "./curry.js",
+    "main": "./finkel.js",
     "scripts": {
         "test": "mocha --ui exports || node_modules/mocha/bin/mocha --ui exports"
     },
