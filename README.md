@@ -24,7 +24,7 @@ You might notice that there is no option for setting `this`. This is by design; 
 
 ### Hole: `_`
 
-Indicates an argument to be filled in when the curried function is called.
+Indicates an argument to be filled in when the curried function is called. `_` should be a reference to the Underscore object.
 
 ### Splat: `[_]`
 
