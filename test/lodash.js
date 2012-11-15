@@ -1,5 +1,5 @@
 var _ = require('lodash');
-require('../curry')(_);
+require('../')(_);
 
 module.exports = require('./suite')(_);
 
