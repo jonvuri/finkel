@@ -47,6 +47,33 @@ module.exports = function (_) {
                 expect(fn('ginger')).to.equal('ginger');
             },
 
+            'should remap arguments': function() {
+                var fn = _.curry(sum, _(1), _(0));
+
+                expect(fn('mint ', 'saffron ')).to.equal('saffron mint ');
+            },
+
+            'should respect splats when remapping arguments': function() {
+                var fn = _.curry(sumFour, _(3), [_], _(0), _(1));
+
+                expect(fn('zero ', 'one ', 'two ' , 'three '))
+                    .to.equal('three two zero one ');
+            },
+
+            'should respect holes when remapping arguments': function() {
+                var fn = _.curry(sumFour, _(3), _, _(2), _);
+
+                expect(fn('zero ', 'one ', 'two ' , 'three '))
+                    .to.equal('three zero two one ');
+            },
+
+            'populate with the same value with abandon': function() {
+                var fn = _.curry(sumFour, _(3), _(3), _(3), _(3));
+
+                expect(fn('swedish ', 'chef ', 'says ', 'bork '))
+                    .to.equal('bork bork bork bork ');
+            },
+
             'should not nuke nonformal arguments': function () {
                 var fn = _.curry(secondNonformal, 'coriander');
 
