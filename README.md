@@ -19,12 +19,17 @@ You might notice that there is no option for setting `this`. This is by design; 
     _.curry(fn, [_], 'z')('w', 'x', 'y');
     _.curry(fn, [_], 'y', _)('w', 'x', 'z');
     _.curry(fn, 'w', [_], 'z')('x', 'y');
+    _.curry(fn, _(3), _(2), _(1), _(0))('z', 'y', 'x', 'w');
 
 * * * *
 
 ### Hole: `_`
 
 Indicates an argument to be filled in when the curried function is called. `_` should be a reference to the Underscore object.
+
+### Mapped Arguments: `_(n)`
+
+Indicates a position in the argument list that should be populated from one of the other arguments when called. `n` is an integer.
 
 ### Splat: `[_]`
 
